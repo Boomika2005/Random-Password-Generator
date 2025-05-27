@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Random Password Generator</h1>
+        <form method="POST">
+            <label for="length">Enter password length:</label>
+            <input type="number" id="length" name="length" min="4" max="32" required>
+            <button type="submit">Generate</button>
+        </form>
+
+        {% if password %}
+            <div class="output">
+                <p><strong>Generated Password:</strong> {{ password }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
